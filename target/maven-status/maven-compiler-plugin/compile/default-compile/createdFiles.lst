@@ -1,0 +1,16 @@
+de\ait_tr\g_37_jp_shop\controller\CustomerController.class
+de\ait_tr\g_37_jp_shop\service\interfaces\CustomerService.class
+de\ait_tr\g_37_jp_shop\service\mapping\ProductMappingService.class
+de\ait_tr\g_37_jp_shop\service\ProductServiceImpl.class
+de\ait_tr\g_37_jp_shop\domain\entity\Customer.class
+de\ait_tr\g_37_jp_shop\domain\entity\Product.class
+de\ait_tr\g_37_jp_shop\service\mapping\CustomerMappingService.class
+de\ait_tr\g_37_jp_shop\domain\dto\ProductDto.class
+de\ait_tr\g_37_jp_shop\controller\ProductController.class
+de\ait_tr\g_37_jp_shop\service\mapping\ProductMappingServiceImpl.class
+de\ait_tr\g_37_jp_shop\G37JpShopApplication.class
+de\ait_tr\g_37_jp_shop\repository\CustomerRepository.class
+de\ait_tr\g_37_jp_shop\domain\dto\CustomerDto.class
+de\ait_tr\g_37_jp_shop\repository\ProductRepository.class
+de\ait_tr\g_37_jp_shop\service\interfaces\ProductService.class
+de\ait_tr\g_37_jp_shop\service\CustomerServiceImpl.class
