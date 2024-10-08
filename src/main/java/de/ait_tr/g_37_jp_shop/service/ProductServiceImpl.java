@@ -22,13 +22,21 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDto save(ProductDto product) {
-        return null;
+    public ProductDto save(ProductDto dto) {
+        Product entity = mappingService.mapDtoToEntity(dto);
+        repository.save(entity);
+        return mappingService.mapEntityToDto(entity);
     }
 
     @Override
     public List<ProductDto> getAll() {
-        return null;
+        return repository.findAll()
+                .stream()
+//              .filter(x -> x.isActive())
+                .filter(Product::isActive)
+//              .map(x -> mappingService.mapEntityToDto(x))
+                .map(mappingService::mapEntityToDto)
+                .toList();
     }
 
     @Override
@@ -36,10 +44,10 @@ public class ProductServiceImpl implements ProductService {
         if (id == null || id < 1) {
             throw new RuntimeException("Product ID is incorrect");
         }
-        
+
         Product product = repository.findById(id).orElse(null);
 
-        if(product == null) {
+        if (product == null) {
             throw new RuntimeException("Product not found");
         }
 

@@ -5,20 +5,23 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="customer")
+@Table(name = "customer")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name="is_active")
+    @Column(name = "is_active")
     private boolean isActive;
+
+    @OneToOne(mappedBy = "customer")
+    private Cart cart;
 
     public Customer(Long id, String name, boolean isActive) {
         this.id = id;
@@ -75,7 +78,8 @@ public class Customer {
 
     @Override
     public String toString() {
-        return String.format("Customer: ID - %d, name - %s, active - %s",
-                id, name, isActive ? "yes" : "no");
+        return String.format("Customer: ID - %d, name - %s, active - %s, cart - %s",
+                id, name, isActive ? "yes" : "no",
+                cart == null ? "ERROR! Cart is missing!" : cart);
     }
 }
